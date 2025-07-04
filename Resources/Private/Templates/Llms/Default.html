@@ -1,0 +1,40 @@
+# {site.title}
+<f:if condition="{site.description}">
+> {site.description}
+</f:if>
+
+## Overview
+
+This document provides an overview of the content available on {site.url}. It is automatically generated to help Large Language Models understand and navigate our website structure.
+
+## Main Content
+
+<f:for each="{pages}" as="page">
+### {page.title}
+
+<f:if condition="{page.description}">
+{page.description}
+
+</f:if>
+<f:if condition="{fullVersion}">
+<f:then>
+{page.content -> f:format.raw()}
+
+</f:then>
+<f:else>
+URL: {page.url}
+<f:if condition="{page.abstract}">
+Summary: {page.abstract}
+</f:if>
+
+</f:else>
+</f:if>
+---
+
+</f:for>
+
+## Additional Information
+
+Generated: {f:format.date(date: 'now', format: 'Y-m-d H:i:s')}
+Total Pages: {pages -> f:count()}
+Format: <f:if condition="{fullVersion}"><f:then>Full Content</f:then><f:else>Index</f:else></f:if>

@@ -1,0 +1,67 @@
+# TYPO3 Extension Development
+.Build/
+.php_cs.cache
+.phpunit.result.cache
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+Tests/Acceptance/_output/
+Tests/Functional/Fixtures/Frontend/GeneratedFiles/
+Tests/Build/FunctionalTests.xml
+Tests/Build/UnitTests.xml
+
+# Build artifacts
+Documentation-GENERATED-temp/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# TYPO3 specific
+typo3temp/
+fileadmin/
+uploads/
+typo3conf/LocalConfiguration.php
+typo3conf/PackageStates.php
+typo3conf/ENABLE_INSTALL_TOOL
+typo3conf/FIRST_INSTALL
+index.php
+typo3/
+typo3_src
+typo3_src-*
+.htaccess
+
+# Generated files
+llms.txt
+llms-*.txt
+
+# Logs
+*.log
+var/
+
+# Cache
+.cache/
+var/cache/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# PHP Code Coverage
+.coverage/
+coverage.xml
+coverage/
+
+# PHPStan
+phpstan.neon.dist
+
+# OS generated files
+Thumbs.db

@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+    <h1>LLMs.txt Generator</h1>
+    
+    <f:flashMessages />
+    
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Available Sites</h2>
+        </div>
+        <div class="card-body">
+            <f:if condition="{sites}">
+                <f:then>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th>Base URL</th>
+                                <th>Languages</th>
+                                <th>Last Generated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <f:for each="{sites}" as="site">
+                                <tr>
+                                    <td>{site.identifier}</td>
+                                    <td>{site.base}</td>
+                                    <td>
+                                        <f:for each="{site.languages}" as="language">
+                                            <span class="badge badge-info">{language.iso}</span>
+                                        </f:for>
+                                    </td>
+                                    <td>
+                                        <f:if condition="{site.lastGenerated}">
+                                            <f:then>
+                                                <f:format.date format="d.m.Y H:i">{site.lastGenerated}</f:format.date>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="text-muted">Never</span>
+                                            </f:else>
+                                        </f:if>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <f:link.action action="generate" arguments="{site: site.identifier}" class="btn btn-primary btn-sm" title="Generate">
+                                                <be:icon identifier="actions-refresh" />
+                                                Generate
+                                            </f:link.action>
+                                            <f:link.action action="preview" arguments="{site: site.identifier}" class="btn btn-default btn-sm" title="Preview">
+                                                <be:icon identifier="actions-view" />
+                                                Preview
+                                            </f:link.action>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </f:for>
+                        </tbody>
+                    </table>
+                    
+                    <div class="mt-3">
+                        <f:link.action action="generate" class="btn btn-success">
+                            <be:icon identifier="actions-refresh" />
+                            Generate All Sites
+                        </f:link.action>
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="alert alert-info">
+                        No sites configured.
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+
+</html>

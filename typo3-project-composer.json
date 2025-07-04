@@ -1,0 +1,50 @@
+{
+    "name": "dkd/typo3-llms-dev",
+    "type": "project",
+    "description": "TYPO3 development environment for LLMs.txt Generator extension",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^12.4",
+        "typo3/cms-backend": "^12.4",
+        "typo3/cms-frontend": "^12.4",
+        "typo3/cms-extbase": "^12.4",
+        "typo3/cms-fluid": "^12.4",
+        "typo3/cms-fluid-styled-content": "^12.4",
+        "typo3/cms-scheduler": "^12.4",
+        "typo3/cms-install": "^12.4",
+        "typo3/cms-tstemplate": "^12.4",
+        "typo3/cms-setup": "^12.4",
+        "typo3/cms-rte-ckeditor": "^12.4"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^8.0",
+        "phpunit/phpunit": "^10.0",
+        "typo3/cms-lowlevel": "^12.4"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./llms_txt_generator"
+        }
+    ],
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "web-dir": "public",
+            "root-dir": "."
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\CMS\\Composer\\Plugin\\Core\\InstallerScriptsRegistration::register",
+            "TYPO3\\CMS\\Composer\\Plugin\\Tx_Extensionmanager_Utility_InstallUtility::install"
+        ]
+    }
+}

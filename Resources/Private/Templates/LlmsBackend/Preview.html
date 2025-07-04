@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Content">
+    <h1>Preview: llms.txt</h1>
+    
+    <f:link.action action="index" class="btn btn-default mb-3">
+        <be:icon identifier="actions-back" />
+        Back to Overview
+    </f:link.action>
+    
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">
+                Preview for Site: {siteIdentifier}
+            </h2>
+        </div>
+        <div class="card-body">
+            <pre class="bg-light p-3" style="max-height: 600px; overflow-y: auto;">{content}</pre>
+        </div>
+        <div class="card-footer">
+            <f:link.action action="generate" arguments="{site: siteIdentifier}" class="btn btn-primary">
+                <be:icon identifier="actions-refresh" />
+                Generate and Save
+            </f:link.action>
+        </div>
+    </div>
+</f:section>
+
+</html>

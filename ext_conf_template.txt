@@ -1,0 +1,44 @@
+# cat=basic/enable/10; type=string; label=Site Title: Default title for llms.txt
+site_title = 
+
+# cat=basic/enable/20; type=string; label=Site Description: Default description for llms.txt
+site_description = 
+
+# cat=basic/enable/30; type=string; label=Include Page Types: Comma-separated list of page types to include (e.g., 1,4)
+include_page_types = 1
+
+# cat=basic/enable/40; type=string; label=Exclude Page UIDs: Comma-separated list of page UIDs to exclude
+exclude_page_uids = 
+
+# cat=basic/enable/50; type=int+; label=Max Content Length: Maximum content length per page (characters)
+max_content_length = 10000
+
+# cat=basic/enable/60; type=boolean; label=Enable Full Version: Generate full-content version of llms.txt
+enable_full_version = 0
+
+# cat=basic/enable/70; type=options[manual,daily,weekly,monthly]; label=Update Frequency: How often to regenerate llms.txt
+update_frequency = daily
+
+# cat=basic/enable/80; type=boolean; label=Enable Multi-language: Generate separate llms.txt for each language
+enable_multilanguage = 1
+
+# cat=basic/enable/90; type=boolean; label=Include Hidden Pages: Include pages hidden in menu
+include_hidden_pages = 0
+
+# cat=basic/enable/100; type=boolean; label=Enable Caching: Cache generated llms.txt content
+enable_caching = 1
+
+# cat=advanced/enable/110; type=string; label=Output Format: Output format (markdown, plain)
+output_format = markdown
+
+# cat=advanced/enable/120; type=string; label=Custom Template Path: Path to custom Fluid template
+custom_template_path = 
+
+# cat=advanced/enable/130; type=boolean; label=Enable Debug Mode: Show debug information in backend
+enable_debug = 0
+
+# cat=advanced/enable/140; type=string; label=Content Element Types: Comma-separated list of content element types to include
+include_content_types = text,textpic,textmedia,bullets,table,html
+
+# cat=advanced/enable/150; type=boolean; label=Respect Frontend Access Rights: Only include pages accessible to everyone
+respect_access_rights = 1

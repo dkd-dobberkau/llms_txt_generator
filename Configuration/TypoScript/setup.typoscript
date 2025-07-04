@@ -1,0 +1,36 @@
+# LLMs.txt Generator Setup
+
+plugin.tx_llmstxtgenerator {
+    settings {
+        siteTitle = {$plugin.tx_llmstxtgenerator.settings.siteTitle}
+        siteDescription = {$plugin.tx_llmstxtgenerator.settings.siteDescription}
+        includedPageTypes = {$plugin.tx_llmstxtgenerator.settings.includedPageTypes}
+        excludePageUids = {$plugin.tx_llmstxtgenerator.settings.excludePageUids}
+        maxContentLength = {$plugin.tx_llmstxtgenerator.settings.maxContentLength}
+        includeContentTypes = {$plugin.tx_llmstxtgenerator.settings.includeContentTypes}
+        outputFormat = {$plugin.tx_llmstxtgenerator.settings.outputFormat}
+        enableFullVersion = {$plugin.tx_llmstxtgenerator.settings.enableFullVersion}
+        enableMultilanguage = {$plugin.tx_llmstxtgenerator.settings.enableMultilanguage}
+        enableCaching = {$plugin.tx_llmstxtgenerator.settings.enableCaching}
+        cacheLifetime = {$plugin.tx_llmstxtgenerator.settings.cacheLifetime}
+    }
+}
+
+# Module configuration
+module.tx_llmstxtgenerator {
+    settings < plugin.tx_llmstxtgenerator.settings
+    view {
+        templateRootPaths {
+            0 = EXT:llms_txt_generator/Resources/Private/Templates/
+            10 = {$module.tx_llmstxtgenerator.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:llms_txt_generator/Resources/Private/Partials/
+            10 = {$module.tx_llmstxtgenerator.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:llms_txt_generator/Resources/Private/Layouts/
+            10 = {$module.tx_llmstxtgenerator.view.layoutRootPath}
+        }
+    }
+}

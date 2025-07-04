@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="module">
+    <div class="module-docheader">
+        <div class="module-docheader-bar module-docheader-bar-navigation">
+            <div class="module-docheader-bar-column-left">
+                <div class="form-inline">
+                    <!-- Navigation items here if needed -->
+                </div>
+            </div>
+            <div class="module-docheader-bar-column-right">
+                <f:link.action action="settings" class="btn btn-default btn-sm">
+                    <be:icon identifier="actions-cog" />
+                    Settings
+                </f:link.action>
+            </div>
+        </div>
+    </div>
+    
+    <div class="module-body">
+        <f:render section="Content" />
+    </div>
+</div>
+
+</html>

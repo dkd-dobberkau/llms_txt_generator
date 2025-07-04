@@ -1,0 +1,28 @@
+# LLMs.txt Generator Constants
+
+plugin.tx_llmstxtgenerator {
+    settings {
+        # Site information
+        siteTitle = {$site.title}
+        siteDescription = {$site.description}
+        
+        # Page selection
+        includedPageTypes = 1,4
+        excludePageUids = 
+        
+        # Content settings
+        maxContentLength = 10000
+        includeContentTypes = text,textpic,textmedia,bullets,table,html
+        
+        # Output settings
+        outputFormat = markdown
+        enableFullVersion = 0
+        
+        # Language settings
+        enableMultilanguage = 1
+        
+        # Caching
+        enableCaching = 1
+        cacheLifetime = 86400
+    }
+}
