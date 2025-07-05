@@ -2,6 +2,8 @@
 
 Automatically generates `llms.txt` files for TYPO3 websites to optimize them for Large Language Model consumption.
 
+** WIP **
+
 ## Features
 
 - **Automatic Generation**: Creates llms.txt files automatically from your TYPO3 content
